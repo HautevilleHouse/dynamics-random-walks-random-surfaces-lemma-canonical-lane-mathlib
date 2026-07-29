@@ -1,0 +1,19 @@
+import canonicalLaneMathlib.AdmissibleClass
+import HautevilleHouse.DynamicsRandomWalksRandomSurfacesLemmaCanonicalLaneLean.RandomWalkHeatKernel
+import HautevilleHouse.DynamicsRandomWalksRandomSurfacesLemmaCanonicalLaneLean.RandomSurfaceScaling
+import HautevilleHouse.DynamicsRandomWalksRandomSurfacesLemmaCanonicalLaneLean.LaceExpansion
+import HautevilleHouse.DynamicsRandomWalksRandomSurfacesLemmaCanonicalLaneLean.GaussianFreeField
+import HautevilleHouse.DynamicsRandomWalksRandomSurfacesLemmaCanonicalLaneLean.SchrammLoewnerEvolution
+
+namespace HautevilleHouse
+namespace DynamicsRandomWalksRandomSurfacesLemmaCanonicalLaneLean
+
+def ConstrainedDynamicsRandomWalksRandomSurfacesClosure (A : AdmissibleClass) : Prop :=
+  bridgeClosed A ∧ gateClosed A
+
+theorem constrained_dynamics_random_walks_random_surfaces_endgame (A : AdmissibleClass) :
+    ConstrainedDynamicsRandomWalksRandomSurfacesClosure A := by
+  exact And.intro (bridge_from_admissible_class A) (gate_from_admissible_class A)
+
+end DynamicsRandomWalksRandomSurfacesLemmaCanonicalLaneLean
+end HautevilleHouse
